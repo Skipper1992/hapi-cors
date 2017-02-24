@@ -22,9 +22,6 @@ exports.register = function(server, options, next){
   server.ext({
     type: 'onPreResponse',
     method: function(request, reply){
-      if(!request.headers.origin){
-        return reply.continue();
-      }
 
       var response = request.response.isBoom ? request.response.output : request.response
 
